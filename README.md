@@ -4,7 +4,7 @@ Finds the closest road for a given light
 
 ## Running the code
 
-I used [uv](https://docs.astral.sh/uv/) for package/project management, so:
+I used [uv](https://docs.astral.sh/uv/) for package/project management, so use:
 
 ```sh
 git clone https://github.com/meri-leeworthy/ironbark.git
@@ -27,6 +27,10 @@ The code is written to be have ok performance assuming a higher volume of data w
 - Coordinates are expected to be around Melbourne region for purposes of projecting to metric CRS
 - I assume for simplicity there are no zero-length line segments
 - Lights are always Point and roads are always LineString
+
+## Data observations
+
+I noticed a duplicate light (the whole object was duplicated) and a light with a null id. Some roads have the same name and one had no name but this was tolerated as the name wasn't used in the output. Roads all have two point LineString except the last one which had 13 points. 
 
 ## AI use
 
