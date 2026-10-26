@@ -264,3 +264,7 @@ I didn't see this section earlier:
 > Note: the use of alternative coordinate reference systems was specified in [GJ2008], but it has been removed from this version of the specification because the use of different coordinate reference systems -- especially in the manner specified in [GJ2008] -- has proven to have interoperability issues.  In general, GeoJSON processing software is not expected to have access to coordinate reference system databases or to have network access to coordinate reference system transformation parameters.  However, where all involved parties have a prior arrangement, alternative coordinate reference systems can be used without risk of data being misinterpreted.
 
 So it seems that section 3.1.1 is actually inconsistent with that apparent update? Anyway, I think this means we can assume coordinates are longitude and latitude.
+
+### Extracting segments
+
+I decided to cast the Lights and Roads instances at validation time so I can access the geopandas properties and methods

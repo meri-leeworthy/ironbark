@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import cast
 
 import geopandas as gpd
 import pandas as pd
@@ -33,7 +34,7 @@ def load_lights(path: Path):
 
     gdf = gdf.drop_duplicates(subset="light_id", keep="first")
 
-    return Lights.validate(gdf, lazy=True)
+    return cast(GeoDataFrame[Lights], Lights.validate(gdf, lazy=True))
 
 class Roads(pa.DataFrameModel):
     road_id: Series[str] = pa.Field(unique=True)
@@ -49,7 +50,7 @@ class Roads(pa.DataFrameModel):
 
 def load_roads(path: Path):
     gdf = gpd.read_file(path)
-    return Roads.validate(gdf, lazy=True)
+    return cast(GeoDataFrame[Roads], Roads.validate(gdf, lazy=True))
 
 
 def main():
