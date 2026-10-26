@@ -213,12 +213,14 @@ class Lights(pa.DataFrameModel)
 
 ### Todo
 
-- validate roads are Feature, that they have road_id, and geometry is LineString
-- validate lights are Feature, they have light_id, and geometry is point
-- can we validate the coordinates are lat/long?
-- validate that road_id and light_id are unique
-- deduplication
-- implement
+- validate roads are Feature, that they have road_id, and geometry is LineString ✅
+- validate lights are Feature, they have light_id, and geometry is point ✅
+- can we validate the coordinates are lat/long? ❌ not needed
+- validate that road_id and light_id are unique ✅
+- deduplication ✅
+- implement segments index
+- implement distance function
+- output formatting
 
 ## Progress
 
@@ -252,3 +254,13 @@ pandera.errors.SchemaErrors: {
 ```
 
 Given that light_id is part of the expected output, I think I will decide that a null value makes that light data invalid and reject it.
+
+### On northing/easting
+
+I didn't see this section earlier:
+
+> The coordinate reference system for all GeoJSON coordinates is a geographic coordinate reference system, using the World Geodetic System 1984 (WGS 84) [WGS84] datum, with longitude and latitude units of decimal degrees.
+
+> Note: the use of alternative coordinate reference systems was specified in [GJ2008], but it has been removed from this version of the specification because the use of different coordinate reference systems -- especially in the manner specified in [GJ2008] -- has proven to have interoperability issues.  In general, GeoJSON processing software is not expected to have access to coordinate reference system databases or to have network access to coordinate reference system transformation parameters.  However, where all involved parties have a prior arrangement, alternative coordinate reference systems can be used without risk of data being misinterpreted.
+
+So it seems that section 3.1.1 is actually inconsistent with that apparent update? Anyway, I think this means we can assume coordinates are longitude and latitude.
