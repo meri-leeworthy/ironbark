@@ -16,7 +16,7 @@ class Lights(pa.DataFrameModel):
     geometry: GeoSeries[Point]
 
     @pa.dataframe_check
-    def points_only(self, gdf: GeoDataFrame) -> pd.Series:
+    def points_only(cls, gdf: GeoDataFrame) -> pd.Series:
         return gdf.geometry.geom_type == "Point"
 
     class Config(pa.DataFrameModel.Config):
@@ -44,12 +44,12 @@ class Roads(pa.DataFrameModel):
     geometry: GeoSeries[LineString]
 
     @pa.dataframe_check
-    def linestring_only(self, gdf: GeoDataFrame) -> pd.Series:
+    def linestring_only(cls, gdf: GeoDataFrame) -> pd.Series:
         return gdf.geometry.geom_type == "LineString"
 
-    def find_closest_roads(self, lights: Lights):
-        # use the dist_fast alg
-        return None
+    class Config(pa.DataFrameModel.Config):
+        strict = "filter"
+        coerce = False
 
 def load_roads(path: Path):
     gdf = gpd.read_file(path)
@@ -87,15 +87,8 @@ class Segments:
         self.x1, self.y1 = a[:, 0], a[:, 1] # a, because start of segment can never be last array
         self.x2, self.y2 = b[:, 0], b[:, 1] # second coords in each segment
 
-    # get columnar segment coordinates for a road position
-    def get(self, road_pos: int):
-        if not 0 <= road_pos < len(self.starts):
-            raise IndexError(f"road {road_pos} not in range")
-        s = slice(self.starts[road_pos], self.starts[road_pos+1])
-        return self.x1[s], self.y1[s], self.x2[s], self.y2[s]
-
     # return closest road idx for list of points
-    def closest_roads(self, points: GeoSeries[Point]):
+    def closest_roads(self, points: GeoSeries[Point], thr_metres: float):
         n = points.shape[0]
         road_closest = np.zeros(n, dtype=int)
         road_distance = np.zeros(n, dtype=float)
@@ -105,9 +98,10 @@ class Segments:
         q = dxs**2 + dys**2
         dxsq = dxs / q
         dysq = dys / q
+        px, py = points.x.to_numpy(), points.y.to_numpy()
         for i in range(n): # for each point
-            dx = points.x.iloc[i] - self.x1
-            dy = points.y.iloc[i] - self.y1
+            dx = px[i] - self.x1
+            dy = py[i] - self.y1
             u = np.clip(dx * dxsq + dy * dysq, 0, 1)
 
             # array of square distances (same order as x1, x2...)
@@ -117,7 +111,7 @@ class Segments:
             min_pos = np.argmin(sqdist)
             closest = sqdist[min_pos]
 
-            threshold = (np.sqrt(closest) + 5) ** 2 # smallest + 5 metres, squared
+            threshold = (np.sqrt(closest) + thr_metres) ** 2 # smallest + 5 metres, squared
             roads_in_threshold = np.unique(self.road_idx[sqdist <= threshold])
 
             road_closest[i] = self.road_idx[min_pos]
@@ -130,10 +124,11 @@ class Segments:
 def main():
     lights = load_lights(Path("lights.geojson"))
     roads = load_roads(Path("roads.geojson"))
+    THRESHOLD_METRES = 5 # distance under which to flag assignments for checking
 
     segments = Segments(roads)
     points = cast(GeoSeries[Point], lights.geometry.to_crs(epsg=7855)) # metric, Melbourne
-    closest_roads, distances, flags = segments.closest_roads(points)
+    closest_roads, distances, flags = segments.closest_roads(points, THRESHOLD_METRES)
 
     pd.DataFrame({
         "light_id": lights["light_id"].to_numpy(),
