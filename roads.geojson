@@ -1,0 +1,269 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "road_id": "R01",
+    "road_name": "Main St"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      145.0460761,
+      -37.8097044
+     ],
+     [
+      145.0494823,
+      -37.8097609
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "road_id": "R02",
+    "road_name": "Main St"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      145.0494823,
+      -37.8097609
+     ],
+     [
+      145.0528885,
+      -37.8098173
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "road_id": "R03",
+    "road_name": "Church St"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      145.0461236,
+      -37.8079029
+     ],
+     [
+      145.0529359,
+      -37.8080157
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "road_id": "R04",
+    "road_name": "Park Rd"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      145.0461711,
+      -37.8061013
+     ],
+     [
+      145.0529832,
+      -37.8062141
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "road_id": "R05",
+    "road_name": "Elm Ave"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      145.0460761,
+      -37.8097044
+     ],
+     [
+      145.0461711,
+      -37.8061013
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "road_id": "R06",
+    "road_name": "Oak St"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      145.0483469,
+      -37.8097421
+     ],
+     [
+      145.0484418,
+      -37.8061389
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "road_id": "R07",
+    "road_name": "Ash St"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      145.0506177,
+      -37.8097797
+     ],
+     [
+      145.0507125,
+      -37.8061765
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "road_id": "R08",
+    "road_name": "Birch St"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      145.0528885,
+      -37.8098173
+     ],
+     [
+      145.0529832,
+      -37.8062141
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "road_id": "R09",
+    "road_name": null
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      145.0488054,
+      -37.8095875
+     ],
+     [
+      145.0501678,
+      -37.80961
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "road_id": "R10",
+    "road_name": "Maple Ct"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      145.0506888,
+      -37.8070773
+     ],
+     [
+      145.0518242,
+      -37.8070961
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "road_id": "R11",
+    "road_name": "Willow Cres"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      145.0529122,
+      -37.8089165
+     ],
+     [
+      145.0531348,
+      -37.8089086
+     ],
+     [
+      145.0533542,
+      -37.8088777
+     ],
+     [
+      145.0535666,
+      -37.8088244
+     ],
+     [
+      145.0537685,
+      -37.8087495
+     ],
+     [
+      145.0539563,
+      -37.8086544
+     ],
+     [
+      145.0541268,
+      -37.8085406
+     ],
+     [
+      145.0542772,
+      -37.8084102
+     ],
+     [
+      145.0544048,
+      -37.8082653
+     ],
+     [
+      145.0545075,
+      -37.8081084
+     ],
+     [
+      145.0545835,
+      -37.8079422
+     ],
+     [
+      145.0546315,
+      -37.8077696
+     ],
+     [
+      145.0546507,
+      -37.8075934
+     ]
+    ]
+   }
+  }
+ ]
+}

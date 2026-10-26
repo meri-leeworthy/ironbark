@@ -1,0 +1,1235 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10490",
+    "pole_id": "P4210",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0484387,
+     -37.8090685
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": null,
+    "pole_id": "P4066",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0475907,
+     -37.806054
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10504",
+    "pole_id": "P4216",
+    "lamp_type": "HPS 150W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0497703,
+     -37.8098333
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10105",
+    "pole_id": "P4045",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0481129,
+     -37.807996
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10189",
+    "pole_id": "P4081",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0460704,
+     -37.8067702
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10546",
+    "pole_id": "P4234",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0470156,
+     -37.806174
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10378",
+    "pole_id": "P4162",
+    "lamp_type": "HPS 150W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0520475,
+     -37.8098698
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10105",
+    "pole_id": "P4045",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0481129,
+     -37.807996
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10140",
+    "pole_id": "P4060",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0460513,
+     -37.8076875
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10364",
+    "pole_id": "P4156",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.046177,
+     -37.8090406
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10518",
+    "pole_id": "P4222",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0484881,
+     -37.8072436
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10035",
+    "pole_id": "P4015",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0505459,
+     -37.8095281
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10238",
+    "pole_id": "P4102",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0528336,
+     -37.8086652
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10497",
+    "pole_id": "P4213",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0482742,
+     -37.8094928
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10014",
+    "pole_id": "P4006",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0472697,
+     -37.8075163
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10175",
+    "pole_id": "P4075",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0486769,
+     -37.8078859
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10224",
+    "pole_id": "P4096",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0498357,
+     -37.806092
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10203",
+    "pole_id": "P4087",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0483539,
+     -37.8068031
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10217",
+    "pole_id": "P4093",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0520862,
+     -37.8079455
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10070",
+    "pole_id": "P4030",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0494875,
+     -37.8095627
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10021",
+    "pole_id": "P4009",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0462437,
+     -37.8063265
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10483",
+    "pole_id": "P4207",
+    "lamp_type": "HPS 150W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0480652,
+     -37.8098023
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10567",
+    "pole_id": "P4021",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0528767,
+     -37.8077995
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10392",
+    "pole_id": "P4168",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0461972,
+     -37.8081086
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10266",
+    "pole_id": "P4114",
+    "lamp_type": "HPS 150W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0525862,
+     -37.8098701
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10231",
+    "pole_id": "P4099",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.053181,
+     -37.8089662
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10287",
+    "pole_id": "P4123",
+    "lamp_type": "HPS 150W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0494807,
+     -37.809824
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10147",
+    "pole_id": "P4063",
+    "lamp_type": "HPS 150W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.049215,
+     -37.8098237
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10042",
+    "pole_id": "P4018",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0497829,
+     -37.807899
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10182",
+    "pole_id": "P4078",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0529802,
+     -37.8091364
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10462",
+    "pole_id": "P4198",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0528249,
+     -37.809575
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10427",
+    "pole_id": "P4183",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0506256,
+     -37.806878
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10455",
+    "pole_id": "P4195",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.046215,
+     -37.8072537
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10532",
+    "pole_id": "P4228",
+    "lamp_type": "HPS 150W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0469505,
+     -37.8097822
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10560",
+    "pole_id": "P4240",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0503702,
+     -37.8080401
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10511",
+    "pole_id": "P4219",
+    "lamp_type": "HPS 150W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0514891,
+     -37.8098563
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10273",
+    "pole_id": "P4117",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0464386,
+     -37.8078363
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10119",
+    "pole_id": "P4051",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0545631,
+     -37.8081528
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10049",
+    "pole_id": "P4021",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0528699,
+     -37.8077994
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10063",
+    "pole_id": "P4027",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0507261,
+     -37.8090871
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10350",
+    "pole_id": "P4150",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.048464,
+     -37.807884
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10553",
+    "pole_id": "P4237",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0528757,
+     -37.8068886
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10315",
+    "pole_id": "P4135",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0530134,
+     -37.8082349
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10133",
+    "pole_id": "P4057",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0509795,
+     -37.8061182
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10336",
+    "pole_id": "P4144",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0507334,
+     -37.8082046
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10441",
+    "pole_id": "P4189",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0487019,
+     -37.8060851
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10329",
+    "pole_id": "P4141",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0515148,
+     -37.8080568
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10406",
+    "pole_id": "P4174",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0493058,
+     -37.8062082
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10343",
+    "pole_id": "P4147",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.048124,
+     -37.8061971
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10420",
+    "pole_id": "P4180",
+    "lamp_type": "HPS 150W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0503401,
+     -37.8098335
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10126",
+    "pole_id": "P4054",
+    "lamp_type": "HPS 150W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0509217,
+     -37.8098408
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10448",
+    "pole_id": "P4192",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0460195,
+     -37.8085769
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10280",
+    "pole_id": "P4120",
+    "lamp_type": "HPS 150W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0474751,
+     -37.8097836
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10056",
+    "pole_id": "P4024",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0505677,
+     -37.808676
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10098",
+    "pole_id": "P4042",
+    "lamp_type": "HPS 150W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0505454,
+     -37.8097226
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10245",
+    "pole_id": "P4105",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0530612,
+     -37.8064604
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10357",
+    "pole_id": "P4153",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0515708,
+     -37.8062608
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10259",
+    "pole_id": "P4111",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.048475,
+     -37.808164
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10308",
+    "pole_id": "P4132",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0475156,
+     -37.8078626
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10525",
+    "pole_id": "P4225",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0470074,
+     -37.8079861
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10161",
+    "pole_id": "P4069",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.046485,
+     -37.8060436
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10077",
+    "pole_id": "P4033",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0506011,
+     -37.8077384
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10385",
+    "pole_id": "P4165",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0485218,
+     -37.8063647
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10322",
+    "pole_id": "P4138",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0507603,
+     -37.8073065
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10028",
+    "pole_id": "P4012",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.049258,
+     -37.8080247
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10168",
+    "pole_id": "P4072",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0537948,
+     -37.8088128
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10371",
+    "pole_id": "P4159",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0542651,
+     -37.8085217
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10301",
+    "pole_id": "P4129",
+    "lamp_type": "HPS 150W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0486322,
+     -37.809815
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10413",
+    "pole_id": "P4177",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0504249,
+     -37.8062371
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10084",
+    "pole_id": "P4036",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0515641,
+     -37.8071632
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10007",
+    "pole_id": "P4003",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0507885,
+     -37.8063797
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10210",
+    "pole_id": "P4090",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0482973,
+     -37.8085972
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10196",
+    "pole_id": "P4084",
+    "lamp_type": "HPS 150W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0463587,
+     -37.8097653
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10091",
+    "pole_id": "P4039",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0526571,
+     -37.8080787
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10252",
+    "pole_id": "P4108",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0521312,
+     -37.8061377
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10539",
+    "pole_id": "P4231",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.048312,
+     -37.8076959
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10476",
+    "pole_id": "P4204",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0509802,
+     -37.8070241
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10112",
+    "pole_id": "P4048",
+    "lamp_type": "HPS 150W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0498253,
+     -37.8096787
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10399",
+    "pole_id": "P4171",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0460016,
+     -37.8094747
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10434",
+    "pole_id": "P4186",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0509437,
+     -37.807921
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10469",
+    "pole_id": "P4201",
+    "lamp_type": "LED 17W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0530353,
+     -37.8073269
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "light_id": "SL10294",
+    "pole_id": "P4126",
+    "lamp_type": "LED 33W"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     145.0527307,
+     -37.8062807
+    ]
+   }
+  }
+ ]
+}
