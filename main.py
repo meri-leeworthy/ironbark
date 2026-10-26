@@ -26,6 +26,13 @@ def load_lights(path: Path):
         raise ValueError(f"{path} has no light_id property on its features")
 
     gdf = gdf.dropna(subset=["light_id"]) # filter null id
+
+    duplicates = gdf[gdf.duplicated(subset="light_id", keep="first")]
+    if not duplicates.empty:
+        print(f"Warning: dropping {len(duplicates)} features with duplicate ids")
+
+    gdf = gdf.drop_duplicates(subset="light_id", keep="first")
+
     return Lights.validate(gdf, lazy=True)
 
 class Roads(pa.DataFrameModel):
