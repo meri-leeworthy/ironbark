@@ -27,10 +27,12 @@ The code is written to be have ok performance assuming a higher volume of data w
 - Coordinates are expected to be around Melbourne region for purposes of projecting to metric CRS
 - I assume for simplicity there are no zero-length line segments
 - Lights are always Point and roads are always LineString
+- Lights with missing id are invalid and should be ignored
+- The only reason for flagging a light is that it is close to multiple roads
 
 ## Data observations
 
-I noticed a duplicate light (the whole object was duplicated) and a light with a null id. Some roads have the same name and one had no name but this was tolerated as the name wasn't used in the output. Roads all have two point LineString except the last one which had 13 points. 
+I noticed a duplicate light (the whole object was duplicated) and a light with a null id. Some roads have the same name and one had no name but this was tolerated as the name wasn't used in the output. Roads all have two point LineString except the last one which had 13 points. One light was an outlier in distance from roads: ~45m instead of 5-9m.
 
 ## AI use
 
