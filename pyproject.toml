@@ -1,7 +1,7 @@
 [project]
 name = "ironbark"
 version = "0.1.0"
-description = "Add your description here"
+description = "Interview technical task"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
