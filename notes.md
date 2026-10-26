@@ -280,3 +280,30 @@ Different coordinate reference systems have different codes and geopandas can pr
 https://geopandas.org/en/stable/docs/user_guide/projections.html
 
 Claude suggests using EPSG:7855 for melbourne's longitude ~144-150 E, so we'll go with that.
+
+## Manual validation
+
+Getting close, it would really be better to have automated testing, but just thinking through these results:
+
+This is when closest() returned the segment idx for a given point. So this is 80 indexes for 80 points
+```
+➜  ironbark git:(main) ✗ uv run main.py
+Warning: dropping 1 features with duplicate ids
+[ 5  1  2  4  3  1  4  4  5  6  7  5  2  2  3  5  2  8  4  0  7  4  1 11
+  1  0  2  7  7  6  4  0  2  1  2 18  7  6  5  7  7  3  6  3  2  3  3  1
+  1  4  0  6  1  7  3  5  2  2  3  6  5  6  2 13 16  0  3  9  6  5  0  2
+  3  5  9  8  4  2  7  3]
+(80,)
+```
+
+This is when I changed it to retrieve the road idx for each segment
+```
+➜  ironbark git:(main) ✗ uv run main.py
+Warning: dropping 1 features with duplicate ids
+[ 5  1  2  4  3  1  4  4  5  6  7  5  2  2  3  5  2  8  4  0  7  4  1 10
+  1  0  2  7  7  6  4  0  2  1  2 10  7  6  5  7  7  3  6  3  2  3  3  1
+  1  4  0  6  1  7  3  5  2  2  3  6  5  6  2 10 10  0  3  9  6  5  0  2
+  3  5  9  8  4  2  7  3]
+  ```
+
+  This is promising because we know there are 10 roads but the last one has 12 segments, so 22 segments total. the result is expected: the same except clamped to 10.

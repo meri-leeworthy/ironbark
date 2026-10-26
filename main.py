@@ -82,22 +82,26 @@ class Segments:
         s = slice(self.starts[road_pos], self.starts[road_pos+1])
         return self.x1[s], self.y1[s], self.x2[s], self.y2[s]
 
-    # return closest segment idx for list of points
+    # return closest road idx for list of points
     def closest(self, points: GeoSeries[Point]):
         n = points.shape[0]
-        segment_closest = np.zeros(n, dtype=int)
+        road_closest = np.zeros(n, dtype=int)
         dxs = self.x2 - self.x1
         dys = self.y2 - self.y1
         q = dxs**2 + dys**2
         dxsq = dxs / q
         dysq = dys / q
-        for i in range(n):
+        for i in range(n): # for each point
             dx = points.x.iloc[i] - self.x1
             dy = points.y.iloc[i] - self.y1
             u = np.clip(dx * dxsq + dy * dysq, 0, 1)
+
+            # array of square distances (same order as x1, x2...)
             sqdist = (dx - u * dxs) ** 2 + (dy - u * dys) ** 2
-            segment_closest[i] = np.argmin(sqdist)
-        return segment_closest
+
+            # index of smallest distance in array
+            road_closest[i] = self.road_idx[np.argmin(sqdist)]
+        return road_closest
 
 
 
