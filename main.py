@@ -140,7 +140,7 @@ def main():
         "road_id": roads["road_id"].to_numpy()[closest_roads],
         "distance_m": distances.round(2),
         "flag": flags
-    }).to_csv("light_roads.csv")
+    }).to_csv("light_roads.csv", index=False)
 
 
 if __name__ == "__main__":
