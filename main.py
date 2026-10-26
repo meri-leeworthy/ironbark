@@ -53,6 +53,18 @@ class Roads(pa.DataFrameModel):
 
 def load_roads(path: Path):
     gdf = gpd.read_file(path)
+
+    if "road_id" not in gdf.columns:
+        raise ValueError(f"{path} has no road_id property on its features")
+
+    gdf = gdf.dropna(subset=["road_id"]) # filter null id
+
+    duplicates = gdf[gdf.duplicated(subset="road_id", keep="first")]
+    if not duplicates.empty:
+        print(f"Warning: dropping {len(duplicates)} features with duplicate ids")
+
+    gdf = gdf.drop_duplicates(subset="road_id", keep="first")
+
     return cast(GeoDataFrame[Roads], Roads.validate(gdf, lazy=True))
 
 class Segments:
