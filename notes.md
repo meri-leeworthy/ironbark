@@ -121,7 +121,7 @@ def dist(x1, y1, x2, y2, x3, y3):  # x3,y3 is the point
     return dist
 ```
 
-The optimised solution vectorises the algorithm, i.e. applies operations in parallel over an array, rather than looping:
+The optimised solution vectorises the algorithm, i.e. uses contiguous memory to efficiently use cpu cache:
 
  ```python
  import numpy as np, time
@@ -268,3 +268,15 @@ So it seems that section 3.1.1 is actually inconsistent with that apparent updat
 ### Extracting segments
 
 I decided to cast the Lights and Roads instances at validation time so I can access the geopandas properties and methods
+
+Might want to iterate a bit on the modelling as it shapes up but going with Segments class for now as the main thing
+
+### Isotropic dimensions
+
+It just occurred to me, playing around with the distance function, that I can't directly use lat/lon as x/y, and looking it up I learned that one degree of latitude is not always equal in distance to one degree of longitude, so we need to project to a metric system 
+
+Different coordinate reference systems have different codes and geopandas can project between them
+
+https://geopandas.org/en/stable/docs/user_guide/projections.html
+
+Claude suggests using EPSG:7855 for melbourne's longitude ~144-150 E, so we'll go with that.

@@ -8,11 +8,12 @@ import pandera.pandas as pa
 import shapely
 from pandera.typing import Series
 from pandera.typing.geopandas import GeoDataFrame, GeoSeries
+from shapely.geometry import LineString, Point
 
 
 class Lights(pa.DataFrameModel):
     light_id: Series[str] = pa.Field(unique=True)
-    geometry: GeoSeries
+    geometry: GeoSeries[Point]
 
     @pa.dataframe_check
     def points_only(self, gdf: GeoDataFrame) -> pd.Series:
@@ -40,7 +41,7 @@ def load_lights(path: Path):
 
 class Roads(pa.DataFrameModel):
     road_id: Series[str] = pa.Field(unique=True)
-    geometry: GeoSeries
+    geometry: GeoSeries[LineString]
 
     @pa.dataframe_check
     def linestring_only(self, gdf: GeoDataFrame) -> pd.Series:
@@ -63,7 +64,7 @@ class Segments:
     y2: np.ndarray
 
     def __init__(self, roads: GeoDataFrame[Roads]):
-        road_geometries = roads.geometry.to_numpy() # map roads to LineStrings
+        road_geometries = roads.geometry.to_crs(epsg=7855).to_numpy() # map roads to LineStrings
         coords, coord_idx = shapely.get_coordinates(road_geometries, return_index=True) # all coordinates and mapping to roads
 
         same_line = coord_idx[:-1] == coord_idx[1:] # is a coordinate pair part of the same LineString
