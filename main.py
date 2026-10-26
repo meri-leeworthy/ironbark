@@ -36,21 +36,26 @@ def load_lights(path: Path):
     return Lights.validate(gdf, lazy=True)
 
 class Roads(pa.DataFrameModel):
-    id: str
+    road_id: Series[str] = pa.Field(unique=True)
     geometry: GeoSeries
 
-    def __init__(self, path):
-        self.roads = gpd.read_file(path)
-        # validate the geometry is LineString
+    @pa.dataframe_check
+    def linestring_only(self, gdf: GeoDataFrame) -> pd.Series:
+        return gdf.geometry.geom_type == "LineString"
 
     def find_closest_roads(self, lights: Lights):
         # use the dist_fast alg
         return None
 
+def load_roads(path: Path):
+    gdf = gpd.read_file(path)
+    return Roads.validate(gdf, lazy=True)
+
 
 def main():
-    load_lights(Path("lights.geojson"))
-    print("Hello from ironbark!")
+    lights = load_lights(Path("lights.geojson"))
+    roads = load_roads(Path("roads.geojson"))
+    print(roads)
 
 
 if __name__ == "__main__":
