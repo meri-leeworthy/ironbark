@@ -15,8 +15,17 @@ class Lights(pa.DataFrameModel):
     def points_only(self, gdf: GeoDataFrame) -> pd.Series:
         return gdf.geometry.geom_type == "Point"
 
+    class Config(pa.DataFrameModel.Config):
+        strict = "filter"
+        coerce = False
+
 def load_lights(path: Path):
     gdf = gpd.read_file(path)
+
+    if "light_id" not in gdf.columns:
+        raise ValueError(f"{path} has no light_id property on its features")
+
+    gdf = gdf.dropna(subset=["light_id"]) # filter null id
     return Lights.validate(gdf, lazy=True)
 
 class Roads(pa.DataFrameModel):

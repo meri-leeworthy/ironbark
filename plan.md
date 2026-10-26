@@ -219,3 +219,36 @@ class Lights(pa.DataFrameModel)
 - validate that road_id and light_id are unique
 - deduplication
 - implement
+
+## Progress
+
+Needed to ask Claude some questions to resolve some type discrepancies with Pandera, e.g. load_lights now returns DataFrame[Lights] rather than GeoDataFrame[Lights] because of pandera limitations, hence no explicit return value
+
+Validation turned out to be a good idea though: we also discovered there is one light with light_id == null, as well as SL10105 being duplicated.
+
+```
+pandera.errors.SchemaErrors: {
+    "SCHEMA": {
+        "SERIES_CONTAINS_NULLS": [
+            {
+                "schema": "Lights",
+                "column": "light_id",
+                "check": "not_nullable",
+                "error": "non-nullable series 'light_id' contains null values:1    NaNName: light_id, dtype: str"
+            }
+        ]
+    },
+    "DATA": {
+        "SERIES_CONTAINS_DUPLICATES": [
+            {
+                "schema": "Lights",
+                "column": "light_id",
+                "check": "field_uniqueness",
+                "error": "series 'light_id' contains duplicate values:3    SL101057    SL10105Name: light_id, dtype: str"
+            }
+        ]
+    }
+}
+```
+
+Given that light_id is part of the expected output, I think I will decide that a null value makes that light data invalid and reject it.
