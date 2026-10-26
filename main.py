@@ -66,7 +66,6 @@ class Segments:
     def __init__(self, roads: GeoDataFrame[Roads]):
         road_geometries = roads.geometry.to_crs(epsg=7855).to_numpy() # map roads to LineStrings
         coords, coord_idx = shapely.get_coordinates(road_geometries, return_index=True) # all coordinates and mapping to roads
-
         same_line = coord_idx[:-1] == coord_idx[1:] # is a coordinate pair part of the same LineString
         a, b = coords[:-1], coords[1:] # exclude last, exclude first
         a, b = a[same_line], b[same_line] # keep only coordinates from same line
@@ -76,10 +75,28 @@ class Segments:
         self.x1, self.y1 = a[:, 0], a[:, 1] # a, because start of segment can never be last array
         self.x2, self.y2 = b[:, 0], b[:, 1] # second coords in each segment
 
+    # get columnar segment coordinates for a road position
     def get(self, road_pos: int):
         if not 0 <= road_pos < len(self.starts):
             raise IndexError(f"road {road_pos} not in range")
-        print(self.starts[road_pos])
+        s = slice(self.starts[road_pos], self.starts[road_pos+1])
+        return self.x1[s], self.y1[s], self.x2[s], self.y2[s]
+
+    # for every segment return its distance to a point
+    def distances(self, point: Point):
+        dxs = self.x2 - self.x1
+        dys = self.y2 - self.y1
+        q = dxs**2 + dys**2
+        dxsq = dxs / q
+        dysq = dys / q
+        dx = point.x - self.x1
+        dy = point.y - self.y1
+        u = np.clip(dx * dxsq + dy * dysq, 0, 1)
+        sqdist = (dx - u * dxs) ** 2 + (dy - u * dys) ** 2
+        for dist in sqdist:
+            print(f'{dist:.8f}')
+
+
 
 def main():
     lights = load_lights(Path("lights.geojson"))
@@ -87,7 +104,10 @@ def main():
     roads = load_roads(Path("roads.geojson"))
 
     segments = Segments(roads)
-    segments.get(500)
+    # print(lights.geometry[0])
+    point = lights.geometry.to_crs(epsg=7855)
+    print(point.iloc[0])
+    segments.distances(point.iloc[3])
 
 
 if __name__ == "__main__":
