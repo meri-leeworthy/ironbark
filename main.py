@@ -83,9 +83,11 @@ class Segments:
         return self.x1[s], self.y1[s], self.x2[s], self.y2[s]
 
     # return closest road idx for list of points
-    def closest(self, points: GeoSeries[Point]):
+    def closest_roads(self, points: GeoSeries[Point]):
         n = points.shape[0]
         road_closest = np.zeros(n, dtype=int)
+        road_distance = np.zeros(n, dtype=float)
+        road_flag = np.zeros(n, dtype=bool)
         dxs = self.x2 - self.x1
         dys = self.y2 - self.y1
         q = dxs**2 + dys**2
@@ -99,21 +101,34 @@ class Segments:
             # array of square distances (same order as x1, x2...)
             sqdist = (dx - u * dxs) ** 2 + (dy - u * dys) ** 2
 
-            # index of smallest distance in array
-            road_closest[i] = self.road_idx[np.argmin(sqdist)]
-        return road_closest
+            # position of smallest distance in array
+            min_pos = np.argmin(sqdist)
+            closest = sqdist[min_pos]
+
+            threshold = (np.sqrt(closest) + 5) ** 2 # smallest + 5 metres, squared
+            roads_in_threshold = np.unique(self.road_idx[sqdist <= threshold])
+
+            road_closest[i] = self.road_idx[min_pos]
+            road_distance[i] = np.sqrt(sqdist[min_pos])
+            road_flag[i] = len(roads_in_threshold) > 1
+        return road_closest, road_distance, road_flag
 
 
 
 def main():
     lights = load_lights(Path("lights.geojson"))
-    # print(lights)
     roads = load_roads(Path("roads.geojson"))
 
     segments = Segments(roads)
     points = cast(GeoSeries[Point], lights.geometry.to_crs(epsg=7855)) # metric, Melbourne
-    closest = segments.closest(points)
-    print(closest)
+    closest_roads, distances, flags = segments.closest_roads(points)
+
+    pd.DataFrame({
+        "light_id": lights["light_id"].to_numpy(),
+        "road_id": roads["road_id"].to_numpy()[closest_roads],
+        "distance_m": distances.round(2),
+        "flag": flags
+    }).to_csv("light_roads.csv")
 
 
 if __name__ == "__main__":

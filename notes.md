@@ -306,4 +306,26 @@ Warning: dropping 1 features with duplicate ids
   3  5  9  8  4  2  7  3]
   ```
 
-  This is promising because we know there are 10 roads but the last one has 12 segments, so 22 segments total. the result is expected: the same except clamped to 10.
+This is promising because we know there are 10 roads but the last one has 12 segments, so 22 segments total. the result is expected: the same except clamped to 10.
+
+A problem is that this does not capture if a light is equidistant to two roads, it just chooses one.
+
+If I print `sqdist.min()`
+
+```
+0 42.50820286375391
+1 56.31381974120964
+2 44.50458343696218
+3 53.48055418918002
+4 42.41962264218986
+5 54.31450119369637
+6 47.13208258365274
+7 53.905490894583934
+...
+```
+
+actually none of the distances (squared) are 0. This doesn't show me whether any are equidistant but given floating points it seems unlikely. The problem of points being exactly on lines i was anticipating doesn't really exist in the data. I think I'll just flag this as a point for potential future work.
+
+I actually just realised I need to return the distance in metres, so I should probably return a tuple instead. No, I'll return two arrays.
+
+Actually, I think I should calculate equidistance within some threshold and that can be the basis for flagging.
