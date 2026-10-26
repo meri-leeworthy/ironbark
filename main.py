@@ -82,19 +82,22 @@ class Segments:
         s = slice(self.starts[road_pos], self.starts[road_pos+1])
         return self.x1[s], self.y1[s], self.x2[s], self.y2[s]
 
-    # for every segment return its distance to a point
-    def distances(self, point: Point):
+    # return closest segment idx for list of points
+    def closest(self, points: GeoSeries[Point]):
+        n = points.shape[0]
+        segment_closest = np.zeros(n, dtype=int)
         dxs = self.x2 - self.x1
         dys = self.y2 - self.y1
         q = dxs**2 + dys**2
         dxsq = dxs / q
         dysq = dys / q
-        dx = point.x - self.x1
-        dy = point.y - self.y1
-        u = np.clip(dx * dxsq + dy * dysq, 0, 1)
-        sqdist = (dx - u * dxs) ** 2 + (dy - u * dys) ** 2
-        for dist in sqdist:
-            print(f'{dist:.8f}')
+        for i in range(n):
+            dx = points.x.iloc[i] - self.x1
+            dy = points.y.iloc[i] - self.y1
+            u = np.clip(dx * dxsq + dy * dysq, 0, 1)
+            sqdist = (dx - u * dxs) ** 2 + (dy - u * dys) ** 2
+            segment_closest[i] = np.argmin(sqdist)
+        return segment_closest
 
 
 
@@ -104,10 +107,9 @@ def main():
     roads = load_roads(Path("roads.geojson"))
 
     segments = Segments(roads)
-    # print(lights.geometry[0])
-    point = lights.geometry.to_crs(epsg=7855)
-    print(point.iloc[0])
-    segments.distances(point.iloc[3])
+    points = cast(GeoSeries[Point], lights.geometry.to_crs(epsg=7855)) # metric, Melbourne
+    closest = segments.closest(points)
+    print(closest)
 
 
 if __name__ == "__main__":
